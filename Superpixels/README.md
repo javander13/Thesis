@@ -25,6 +25,7 @@ If you find Multi-Level Superpixels useful in your research, please consider cit
 ```
 
 ## Requirements
+
 - Python 2.7
 - OpenCV
 - Numpy
@@ -82,8 +83,6 @@ For the evaluation of the quality of the augmented ground-truth, we compare it t
 ```
 python evaluation/evaluate_augmentation.py --labels ./Datasets/camvid/ --generated ./camvid/ --classes 11
 ```
-
-
 
 
 ## Training a semantic segmentation model

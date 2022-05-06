@@ -1,7 +1,4 @@
-
 # import the necessary packages
-import config
-
 from torch.nn import ConvTranspose2d
 from torch.nn import Conv2d
 from torch.nn import MaxPool2d
@@ -10,6 +7,8 @@ from torch.nn import ModuleList
 from torch.nn import ReLU
 from torchvision.transforms import CenterCrop
 from torch.nn import functional as F
+
+import config
 import torch
 
 
