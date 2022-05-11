@@ -4,7 +4,7 @@ import torch
 
 
 # base path of the dataset
-DATASET_PATH = os.path.join("/data/jantina/CoralNet/WAPA_RFM/")
+DATASET_PATH = os.path.join("/data/jantina/CoralNet/dataset/")
 
 
 # define the path to the images and masks dataset
@@ -31,13 +31,13 @@ PIN_MEMORY = True if DEVICE == "cuda" else False
 
 # initialize learning rate, number of epochs to train for, and the batch size
 NUM_EPOCHS = 40
-BATCH_SIZE = 32 # 64 gives memory error
+BATCH_SIZE = 64 # 64 gives memory error
 #INIT_LR = (1e-4 * BATCH_SIZE / 256)
 INIT_LR = 10*(1e-4 * BATCH_SIZE / 256)
 
 
 # define the path to the base output directory
-BASE_OUTPUT = "/data/jantina/CoralNet/WAPA_RFM/output/"
+BASE_OUTPUT = "/data/jantina/CoralNet/dataset/output/"
 
 
 # define the path to the output serialized model, model training plot, 
