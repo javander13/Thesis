@@ -12,13 +12,8 @@ IMAGE_DATASET_PATH = os.path.join(DATASET_PATH, "images")
 MASK_DATASET_PATH = os.path.join(DATASET_PATH, "labels")
 
 
-# define the path to the images and masks tensors
-IMAGE_TENSOR_PATH = os.path.join(DATASET_PATH, "images_tensor")
-MASK_TENSOR_PATH = os.path.join(DATASET_PATH, "labels_tensor")
-
-
 # define the test split
-TEST_SPLIT = 0.15
+VAL_SPLIT = 0.15
 
 
 # determine the device to be used for training and evaluation
@@ -31,8 +26,7 @@ PIN_MEMORY = True if DEVICE == "cuda" else False
 
 # initialize learning rate, number of epochs to train for, and the batch size
 NUM_EPOCHS = 40
-BATCH_SIZE = 64 # 64 gives memory error
-#INIT_LR = (1e-4 * BATCH_SIZE / 256)
+BATCH_SIZE = 128 
 INIT_LR = 10*(1e-4 * BATCH_SIZE / 256)
 
 
@@ -45,6 +39,15 @@ BASE_OUTPUT = "/data/jantina/CoralNet/dataset/output/"
 MODEL_PATH = os.path.join(BASE_OUTPUT, "unet.pth")
 PLOT_PATH = os.path.join(BASE_OUTPUT, "plot.png")
 TEST_PATHS = os.path.join(BASE_OUTPUT, "test_paths.txt")
+
+
+'''Needed for the tensors
+
+# define the path to the images and masks tensors
+IMAGE_TENSOR_PATH = os.path.join(DATASET_PATH, "images_tensor")
+MASK_TENSOR_PATH = os.path.join(DATASET_PATH, "labels_tensor")
+'''
+
 
 '''Needed for the UNet from scratch
 
