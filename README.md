@@ -42,16 +42,20 @@ Contains `scraper.ipynb` that dowloads the images from CoralNet website for a sp
 All the scripts necessary to train a semantic segmentation model and predict labels for new images.
 
 - `config.py` contains the configuration for the model
-- `dataset_images.py` contains the dataset class with image transformations
-- `model.py` contains the UNet model from scratch, not used !
-- `predict.ipynb` allows to use the trained and saved model to do semantic segmentation on new images
-- `train_images.ipynb` train a semantic segmentation model on images
-- `transformations.ipynb` allows to play around with different data augmentations
+- `dataset.py` contains the dataset class
+- `train.ipynb` train a semantic segmentation model
+- `predict.ipynb` allows to use the trained and saved model to do predictions on the test set
+- `pretrain` folder:
+    - `preprocess_mask.py` contains the function to change the masks from 137 classes to 9
+    - `preprocess_mask.ipynb` transforms all the masks for the dataset to the new classes
+    - `transformations.ipynb` allows to play around with different data augmentations
 - `tensors` folder:
-    - `tensors.ipynb` allows to build tensors for every image and save them -> speed up training loop !
     - `dataset_tensors.py` dataset class for tensors
     - `dataset_tensors_small.py` dataset class for small set of tensors -> loads all from disk in `init`
+    - `tensors.ipynb` allows to build tensors for every image and save them to disk 
     - `train_tensors.ipynb` train a semantic segmentation model on tensors
+- `other` folder:
+    - `model.py` contains the UNet model from scratch, not used !
 
 
 ## Superpixels

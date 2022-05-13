@@ -41,14 +41,6 @@ PLOT_PATH = os.path.join(BASE_OUTPUT, "plot.png")
 TEST_PATHS = os.path.join(BASE_OUTPUT, "test_paths.txt")
 
 
-'''Needed for the tensors
-
-# define the path to the images and masks tensors
-IMAGE_TENSOR_PATH = os.path.join(DATASET_PATH, "images_tensor")
-MASK_TENSOR_PATH = os.path.join(DATASET_PATH, "labels_tensor")
-'''
-
-
 '''Needed for the UNet from scratch
 
 # define the input image dimensions
