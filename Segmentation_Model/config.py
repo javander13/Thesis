@@ -7,12 +7,12 @@ import torch
 DATASET_PATH = os.path.join("/data/jantina/CoralNet/dataset/")
 
 
-# define the path to the images and masks dataset
+# define the path to the images and labels
 IMAGE_DATASET_PATH = os.path.join(DATASET_PATH, "images")
-MASK_DATASET_PATH = os.path.join(DATASET_PATH, "labels")
+LABEL_DATASET_PATH = os.path.join(DATASET_PATH, "labels")
 
 
-# define the test split
+# define the train/val split
 VAL_SPLIT = 0.15
 
 
@@ -25,9 +25,10 @@ PIN_MEMORY = True if DEVICE == "cuda" else False
 
 
 # initialize learning rate, number of epochs to train for, and the batch size
-NUM_EPOCHS = 40
-BATCH_SIZE = 128 
-INIT_LR = 10*(1e-4 * BATCH_SIZE / 256)
+NUM_EPOCHS = 100
+BATCH_SIZE = 256 
+#INIT_LR = 10*(1e-4 * BATCH_SIZE / 9)
+INIT_LR = 1e-4 * BATCH_SIZE / 9
 
 
 # define the path to the base output directory

@@ -11,15 +11,15 @@ This is the `/home/jantina/CoralNet` drive. Here is where all the code is stored
 
 ## Image_Metadata
 
-Contains `sources_metadata.ipynb` that extracts the metadata from all CoralNet sources.
+Contains `sources_metadata.ipynb` that extracts the metadata from all downloaded CoralNet sources.
 
 
 ## Inference
 
-Contains `inference.ipynb` where the saved model is tested on the inference images of the Red Sea.
+Contains `inference.ipynb` where the trained and saved model is tested on the inference images of the Red Sea.
 
 
-## Patches
+## Patches -> not used
 
 Contains `patches.ipynb` that extracts patches around each label, for every image of a source.
 
@@ -43,19 +43,20 @@ All the scripts necessary to train a semantic segmentation model and predict lab
 
 - `config.py` contains the configuration for the model
 - `dataset.py` contains the dataset class
+- `pytorchtools.py` contains the EarlyStopping class
 - `train.ipynb` train a semantic segmentation model
 - `predict.ipynb` allows to use the trained and saved model to do predictions on the test set
 - `pretrain` folder:
     - `preprocess_mask.py` contains the function to change the masks from 137 classes to 9
     - `preprocess_mask.ipynb` transforms all the masks for the dataset to the new classes
     - `transformations.ipynb` allows to play around with different data augmentations
-- `tensors` folder:
+- `tensors` folder: -> not used
     - `dataset_tensors.py` dataset class for tensors
     - `dataset_tensors_small.py` dataset class for small set of tensors -> loads all from disk in `init`
     - `tensors.ipynb` allows to build tensors for every image and save them to disk 
     - `train_tensors.ipynb` train a semantic segmentation model on tensors
-- `other` folder:
-    - `model.py` contains the UNet model from scratch, not used !
+- `other` folder: -> not used
+    - `model.py` contains the UNet model from scratch
 
 
 ## Superpixels
