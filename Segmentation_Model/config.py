@@ -10,7 +10,7 @@ DATASET_PATH = os.path.join("/data/jantina/CoralNet/dataset/")
 # define the path to the images and labels
 IMAGE_DATASET_PATH = os.path.join(DATASET_PATH, "images")
 LABEL_DATASET_PATH = os.path.join(DATASET_PATH, "labels")
-
+MASK_DATASET_PATH = os.path.join(DATASET_PATH, "masks")
 
 # define the train/val split
 VAL_SPLIT = 0.15

@@ -14,11 +14,6 @@ This is the `/home/jantina/CoralNet` drive. Here is where all the code is stored
 Contains `sources_metadata.ipynb` that extracts the metadata from all downloaded CoralNet sources.
 
 
-## Inference
-
-Contains `inference.ipynb` where the trained and saved model is tested on the inference images of the Red Sea.
-
-
 ## Patches -> not used
 
 Contains `patches.ipynb` that extracts patches around each label, for every image of a source.
@@ -43,11 +38,12 @@ All the scripts necessary to train a semantic segmentation model and predict lab
 
 - `config.py` contains the configuration for the model
 - `dataset.py` contains the dataset class
-- `pytorchtools.py` contains the EarlyStopping class
+- `utils.py` contains useful functions and classes
 - `train.ipynb` train a semantic segmentation model
 - `predict.ipynb` allows to use the trained and saved model to do predictions on the test set
+- `inference.ipynb` where the trained and saved model is tested on the inference images of the Red Sea
 - `pretrain` folder:
-    - `preprocess_mask.py` contains the function to change the masks from 137 classes to 9
+    - `preprocess_mask.py` contains the function to change the masks from 207 classes to 10
     - `preprocess_mask.ipynb` transforms all the masks for the dataset to the new classes
     - `transformations.ipynb` allows to play around with different data augmentations
 - `tensors` folder: -> not used
