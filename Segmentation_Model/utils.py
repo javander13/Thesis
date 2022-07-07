@@ -1,5 +1,6 @@
 from torchvision import transforms
 import numpy as np
+import random 
 import torch
 
 def unnormalize(data):
@@ -10,6 +11,33 @@ def unnormalize(data):
                                                          std = [ 1., 1., 1. ])])
     return transform(data)
 
+
+def accuracyAGT(pred, target):
+    """Calculates the accuracy while ignoring the label 0 for the AGT."""
+    
+    return torch.where(pred-target==0)[0].shape[0]/torch.count_nonzero(target)
+
+
+def seed_all(seed):
+    """Handles seeds in pytorch so that reproducible."""
+    if not seed:
+        seed = 10
+        #print("[ Using Seed : ", seed, " ]")
+
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    torch.cuda.manual_seed(seed)
+    np.random.seed(seed)
+    random.seed(seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+
+def seed_worker(worker_id):
+    worker_seed = torch.initial_seed() % 2**32
+    np.random.seed(worker_seed)
+    random.seed(worker_seed)
+    
+    
 
 class EarlyStopping:
     """Early stops the training if validation 

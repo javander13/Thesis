@@ -1,5 +1,5 @@
 ## Merging labels
-hard_coral = [4,5,6,7,8,9,10,11,12,13,14,17,18,118,]
+hard_coral = [4,5,6,7,8,9,10,11,12,13,14,17,18,118]
 
 hard_coral_bleached = []
 
@@ -15,18 +15,18 @@ algae = [25]
 
 seagrass = []
 
-unknown = [19]
+unknown = []
 
-no_label = []
+no_label = [19]
 
 
 def merge_mask(mask):
+    for i in dead_coral:
+        mask[mask == i] = 3
     for i in hard_coral:
         mask[mask == i] = 1
     for i in hard_coral_bleached:
         mask[mask == i] = 2
-    for i in dead_coral:
-        mask[mask == i] = 3
     for i in other_invertebrates:
         mask[mask == i] = 4
     for i in sand_rubble:
