@@ -1,6 +1,6 @@
 # General
 
-This is the `/home/jantina/CoralNet` drive. Here is where all the code is stored for:
+This is the `/home/jantina/code` drive. Here is where all the code is stored for:
 
 - downloading the images from CoralNet
 - extracting the metadata for each downloaded source
@@ -9,56 +9,48 @@ This is the `/home/jantina/CoralNet` drive. Here is where all the code is stored
 - training a semantic segmentation model
 
 
-## Image_Metadata
-
-Contains `sources_metadata.ipynb` that extracts the metadata from all downloaded CoralNet sources.
-
-
-## Patches -> not used
-
-Contains `patches.ipynb` that extracts patches around each label, for every image of a source.
-
-Contains `patch_image_classifier.ipynb` that trains an image classifier on the created patches.
-
-
-## Preprocessing
-
-Contains `masks.ipynb` that allows to show the images with their annotations, and most importantly create
-a mask for each image, containing numbers from [1;255] where each number represents a label and 255 is the 0 (no label).
-
-
-## Scraping
-
-Contains `scraper.ipynb` that dowloads the images from CoralNet website for a specific source.
-
-
-## Segmentation_Model
+## model
 
 All the scripts necessary to train a semantic segmentation model and predict labels for new images.
 
-- `config.py` contains the configuration for the model
-- `dataset.py` contains the dataset class
-- `utils.py` contains useful functions and classes
-- `train.ipynb` train a semantic segmentation model
-- `predict.ipynb` allows to use the trained and saved model to do predictions on the test set
-- `inference.ipynb` where the trained and saved model is tested on the inference images of the Red Sea
-- `pretrain` folder:
-    - `preprocess_mask.py` contains the function to change the masks from 207 classes to 10
-    - `preprocess_mask.ipynb` transforms all the masks for the dataset to the new classes
-    - `transformations.ipynb` allows to play around with different data augmentations
-- `tensors` folder: -> not used
-    - `dataset_tensors.py` dataset class for tensors
-    - `dataset_tensors_small.py` dataset class for small set of tensors -> loads all from disk in `init`
-    - `tensors.ipynb` allows to build tensors for every image and save them to disk 
-    - `train_tensors.ipynb` train a semantic segmentation model on tensors
-- `other` folder: -> not used
-    - `model.py` contains the UNet model from scratch
+- `config.py`: configuration for the model
+
+- `dataset.py`: dataset class
+
+- `utils.py`: useful functions and classes
+
+- `train` folder: training notebooks for the different semantic segmentation model
+
+- `predict` folder: use the trained and saved models to do predictions on the test set
+
+- `inference` folder:  use the trained and saved models to do predictions on the Eilat set
+    
+    
+## preprocessing
+
+- `masks.ipynb`: shows the images with their annotations, and most importantly create
+a mask for each image, containing numbers from [1;255],
+where each number represents a label and 255 is the 0 (no label).
+
+- `scraper.ipynb`: downloads the images from CoralNet website for a specific source.
+
+- `sources_metadata.ipynb`: extracts the metadata from all downloaded CoralNet sources.
+
+- `preprocess_mask.py`: contains the function to change the masks from 207 classes to 10
+
+- `preprocess_mask.ipynb`: transforms all the masks for the dataset to the new classes
+
+- `preprocess_inference.py`: contains the function to remap the Eilat segmentation masks
+
+- `preprocess_inference.ipynb`: transforms all the masks for the Eilat dataset to the new classes
+
+- `transformations.ipynb`: play around with different data augmentations
 
 
-## Superpixels
+## superpixels
 
 Contains the scripts need to generate superpixels and augmented ground truth images.
 
 - `superpixels_setup.ipynb` allows to set up the dataset structure through command lines
-- `superpixel_generation.ipynb` allows to run the superpixel generation and groundtruth augmentation piece by piece
 
+- `superpixel_generation.ipynb` allows to run the superpixel generation and groundtruth augmentation piece by piece
